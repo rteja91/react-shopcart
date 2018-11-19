@@ -24,7 +24,10 @@ class Layout extends Component {
         this.setState({ showCart: true });
     }
 
-
+    /**
+     * Add to cart function
+     * takes product object input & maintain state.
+     */
 
     handleAddtoCart = (pdtObj) => {
         //console.log(pdtObj);
@@ -45,7 +48,9 @@ class Layout extends Component {
         this.setState({ cartInfo: newCartInfo });
 
     }
-
+    /**
+     * Handles a product remove from cart state.
+     */
     handleRemovefromCart = (pdtObj, incart) => {
         let altCartinfo = this.state.cartInfo;
         const oldobjIndex = altCartinfo.pdts.findIndex((obj => obj.id === pdtObj.id));
@@ -59,6 +64,11 @@ class Layout extends Component {
         
         this.setState({ cartInfo: altCartinfo });
     }
+
+    /**
+     * handles product count change in the cart
+     * depending on the add or removal
+     */
 
     handlePdtCountChange = (pdtObj, event) => {
         if(pdtObj.count > event.target.value){

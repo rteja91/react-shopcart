@@ -21,15 +21,6 @@ class HeaderNav extends React.Component {
                     <NavbarToggler onClick={this.toggleCollapse("navbarCollapse3")} />
                     <Collapse id="navbarCollapse3" isOpen={this.state.collapseID} navbar>
                         <NavbarNav right>
-                            {/* <NavItem active>
-                                <NavLink to="#!">Home</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink to="#!">Features</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink to="#!">Pricing</NavLink>
-                            </NavItem> */}
 
                             <NavItem>
                                 <NavLink className="waves-effect waves-light d-flex align-items-center" to="#!" onClick={this.props.clickviewCart}> {this.props.cartInfo.pdtCount} <Fa icon="shopping-cart" className="ml-1" /></NavLink>

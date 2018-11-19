@@ -14,7 +14,11 @@ class ProductList extends Component {
         hasMore: true,
 
     }
-
+    /**
+     * handles ajax call of calling the products
+     * assumes 8 products per two rows and calls data in the form of chunks
+     * //TODO: handle large list rendering more 1000 products
+     */
     loadProaducts() {
 
         const startAt = this.state.products.length;
@@ -39,6 +43,8 @@ class ProductList extends Component {
                 this.setState({ error: true });
             });
     }
+
+    
     componentDidMount() {
         this.loadProaducts();
         window.addEventListener('scroll', this.onScroll, false);
@@ -47,6 +53,11 @@ class ProductList extends Component {
     componentWillUnmount() {
         window.removeEventListener('scroll', this.onScroll, false);
     }
+
+    /**
+     * handles indefinite scroll
+     */
+
 
     onScroll = () => {
         if (
@@ -58,7 +69,9 @@ class ProductList extends Component {
             }
         }
     }
-
+    /**
+     * gets product by id
+     */
     getProductInfo = (id) => {
         return this.state.products[id];
     }
