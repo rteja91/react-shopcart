@@ -64,7 +64,7 @@ class ModalPage extends Component {
                                             <strong>{pdt.count * parseInt(pdt.pdtinfo.pdtPrice)}$</strong>
                                         </td>
                                         <td>
-                                            <button type="button" onClick={() => this.props.removefromCart(pdt.pdtinfo)} className="btn btn-sm btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Remove item">X</button>
+                                            <button type="button" onClick={() => this.props.removefromCart(pdt.pdtinfo, true)} className="btn btn-sm btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Remove item">X</button>
                                         </td>
                                     </tr>);
                                 })}

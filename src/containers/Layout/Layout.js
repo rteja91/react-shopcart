@@ -46,18 +46,12 @@ class Layout extends Component {
 
     }
 
-    handleRemovefromCart = (pdtObj) => {
+    handleRemovefromCart = (pdtObj, incart) => {
         let altCartinfo = this.state.cartInfo;
         const oldobjIndex = altCartinfo.pdts.findIndex((obj => obj.id === pdtObj.id));
         //console.log(oldobjIndex);
-        if(oldobjIndex > -1){
-            if(altCartinfo.pdts[oldobjIndex].count > 1){
+        if(oldobjIndex > -1 && altCartinfo.pdts[oldobjIndex].count > 1 && !incart){
                 altCartinfo.pdts[oldobjIndex].count--;
-            } else {
-                altCartinfo.pdts = altCartinfo.pdts.filter(pdt => pdt.id !== pdtObj.id);
-                altCartinfo.pdtCount = altCartinfo.pdts.length;
-            }
-            
         } else {
             altCartinfo.pdts = altCartinfo.pdts.filter(pdt => pdt.id !== pdtObj.id);
             altCartinfo.pdtCount = altCartinfo.pdts.length;
